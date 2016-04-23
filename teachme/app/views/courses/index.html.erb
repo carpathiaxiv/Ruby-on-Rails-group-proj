@@ -10,3 +10,6 @@
 <% end %>
 <br>
 <a href="/courses/new">Create a Course!</a>
+<% if current_user %>
+	<%= link_to 'Sign out',destroy_user_session_path,method: :delete %>
+<% end %>

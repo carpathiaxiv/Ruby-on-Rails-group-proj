@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 20160423000814) do
   create_table "adminships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "course_id"
   end
 
   create_table "courses", force: :cascade do |t|

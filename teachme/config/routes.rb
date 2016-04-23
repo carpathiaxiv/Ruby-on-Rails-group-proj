@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -6,6 +7,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'courses#index'
+  # devise_scope :user do
+  #   root :to => 'devise/sessions#new'
+  # end
+  # root 'users/sign_in'
   get 'courses/schedule' => 'courses#schedule'
   resources :courses #, only: [:new, :create, :schedule]
   get 'courses/:id/view' => 'courses#view'
